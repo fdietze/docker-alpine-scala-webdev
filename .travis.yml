@@ -1,0 +1,7 @@
+sudo: required
+services: docker
+
+script:
+    - docker build . -t fdietze/docker-alpine-scala-webdev:latest
+    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - docker push fdietze/docker-alpine-scala-webdev:latest
