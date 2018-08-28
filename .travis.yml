@@ -4,6 +4,6 @@ services: docker
 script:
     - docker pull fdietze/docker-alpine-scala-webdev:latest
     - docker build . --cache-from fdietze/docker-alpine-scala-webdev:latest -t fdietze/docker-alpine-scala-webdev:latest -t fdietze/docker-alpine-scala-webdev:"$TRAVIS_COMMIT"
-    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
     - docker push fdietze/docker-alpine-scala-webdev:"$TRAVIS_COMMIT"
     - docker push fdietze/docker-alpine-scala-webdev:latest
