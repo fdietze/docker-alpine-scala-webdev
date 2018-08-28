@@ -17,3 +17,4 @@ RUN apk add --no-cache docker python py2-pip
 RUN pip install docker-compose
 
 RUN apk add --no-cache ncurses git openssh-client make g++ yarn
+RUN yarn global add node-gyp@3.8.0
