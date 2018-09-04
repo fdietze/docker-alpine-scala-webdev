@@ -17,4 +17,9 @@ RUN apk add --no-cache docker python py2-pip
 RUN pip install docker-compose
 
 RUN apk add --no-cache ncurses git openssh-client make g++ yarn
+
 RUN yarn global add node-gyp@3.8.0
+
+# PhantomJS
+RUN wget https://github.com/fgrehm/docker-phantomjs2/releases/download/v2.0.0-20150722/dockerized-phantomjs.tar.gz -O - | tar xz -C /
+
