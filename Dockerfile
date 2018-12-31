@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 ENV DEPS /deps
 ENV PATH $PATH:$DEPS/sbt/bin
-ENV SBT_VERSION 1.2.7
+ENV SBT_VERSION 1.2.8
 ENV SCALA_VERSION 2.12.7
 
 # sbt
