@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jre-alpine3.9
 
 ENV DEPS /deps
 ENV PATH $PATH:$DEPS/sbt/bin
