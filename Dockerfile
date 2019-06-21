@@ -14,7 +14,7 @@ RUN touch Main.scala && sbt ++$SCALA_VERSION compile && rm -rf target Main.scala
 
 # docker, docker-compose
 RUN apk add --no-cache docker python py2-pip
-RUN pip install docker-compose
+RUN pip install docker-compose awscli
 
 RUN apk add --no-cache ncurses git openssh-client yarn
 
