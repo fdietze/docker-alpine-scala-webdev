@@ -12,11 +12,11 @@ RUN cd $DEPS && wget https://sbt-downloads.cdnedge.bluemix.net/releases/v$SBT_VE
 # prepare sbt launcher and pre-compile compiler bridge
 RUN touch Main.scala && sbt ++$SCALA_VERSION compile && rm -rf target Main.scala
 
-# docker, docker-compose
 RUN apk add --no-cache docker python py2-pip
-RUN pip install docker-compose awscli
 
 RUN apk add --no-cache ncurses git openssh-client yarn
+
+RUN pip install docker-compose awscli
 
 # RUN yarn global add node-gyp@3.8.0
 
