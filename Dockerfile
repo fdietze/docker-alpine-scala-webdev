@@ -16,9 +16,12 @@ RUN apk add --no-cache docker python py2-pip
 
 RUN apk add --no-cache ncurses git openssh-client yarn
 
-RUN apk add --no-cache gcc
+# TODO: https://github.com/docker/compose/issues/6617
+RUN apk add --no-cache gcc python2-dev musl-dev libffi-dev openssl-dev make
 
-RUN pip install docker-compose awscli
+RUN pip install docker-compose
+
+RUN pip install awscli
 
 # RUN yarn global add node-gyp@3.8.0
 
