@@ -1,12 +1,12 @@
-FROM openjdk:8-jre-alpine3.9
+FROM alpine:3.10
 
 ENV DEPS /deps
 ENV PATH $PATH:$DEPS/sbt/bin
-ENV SBT_VERSION 1.2.8
+ENV SBT_VERSION 1.3.0-RC1
 ENV SCALA_VERSION 2.12.8
 
 # sbt
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash openjdk11-jre-headless
 RUN mkdir -p $DEPS
 RUN cd $DEPS && wget https://sbt-downloads.cdnedge.bluemix.net/releases/v$SBT_VERSION/sbt-$SBT_VERSION.tgz -O - | gunzip | tar x
 # prepare sbt launcher and pre-compile compiler bridge
