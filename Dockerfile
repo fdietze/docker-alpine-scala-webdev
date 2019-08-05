@@ -3,7 +3,7 @@ FROM alpine:3.10
 ENV DEPS /deps
 ENV PATH $PATH:$DEPS/sbt/bin
 ENV SBT_VERSION 1.2.8
-ENV SCALA_VERSION 2.12.8
+ENV SCALA_VERSION 2.12.9
 
 # sbt
 RUN apk add --no-cache bash openjdk11-jre-headless
